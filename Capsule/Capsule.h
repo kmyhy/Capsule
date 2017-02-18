@@ -14,6 +14,7 @@ IB_DESIGNABLE
 @property(strong,nonatomic)IBInspectable UIColor* fillColor;
 @property(strong,nonatomic)IBInspectable UIColor* textColor;
 @property(strong,nonatomic)IBInspectable UIColor* thumbColor;
+@property(strong,nonatomic)IBInspectable UIColor* thumbShadowColor;
 @property(assign,nonatomic)IBInspectable CGFloat thumbRadius;
 @property(assign,nonatomic)IBInspectable CGFloat thumbShadowWidth;
 @property(strong,nonatomic)IBInspectable UIColor* thumbBorderColor;

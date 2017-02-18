@@ -24,10 +24,10 @@
     // Interface Builder 创建方式
     
     // 代码创建方式
-    
-    Capsule * aCapsule = [[Capsule alloc]initWithFrame:CGRectMake(62, 180, 250, 86)];
-    aCapsule.thumbRadius = 37.5;
-    aCapsule.capsuleHeight = 62;
+    CGFloat scale = [[UIScreen mainScreen]scale];
+    Capsule * aCapsule = [[Capsule alloc]initWithFrame:CGRectMake(62, 180, 250/scale, 86/scale)];
+    aCapsule.thumbRadius = 37.5/scale;
+    aCapsule.capsuleHeight = 62/scale;
     aCapsule.fillColor = [UIColor redColor];
     aCapsule.titles = @[@"静音",@"低",@"中",@"高"];
     [aCapsule addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];

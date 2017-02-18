@@ -32,21 +32,22 @@
 }
 -(void)setup{
     self.bgColor= [UIColor colorWithRed:0xd1/255.0 green:0xd1/255.0 blue:0xd1/255.0 alpha:1];
-    self.titles = @[@"大",@"中",@"小"];
+    self.titles = @[@"小",@"中",@"大"];
     self.selIndex = 01;
     self.fontSize = 14;
     self.textColor= [UIColor whiteColor];
     
     self.thumbColor = [UIColor whiteColor];
-    self.thumbRadius = 28;
-    self.thumbShadowWidth = 4;
+    self.thumbRadius = 18;
+    self.thumbShadowWidth = 2;
     self.backgroundColor = [UIColor clearColor];
-    self.capsuleHeight = 20;
+    self.capsuleHeight = 30;
     
     self.fillColor = [UIColor colorWithRed:0x21/255.0 green:0xcb/255.0 blue:0xa7/255.0 alpha:1];
     
-    self.baseOffset = -1;//设置基线偏移值，取值为 NSNumber （float）,正值往上偏移，负值往下偏移。但好像只有负值有效
-    self.thumbBorderColor = [UIColor lightGrayColor];
+    self.baseOffset = -2;//设置基线偏移值，取值为 NSNumber （float）,正值往上偏移，负值往下偏移。但好像只有负值有效
+    self.thumbBorderColor = [UIColor colorWithRed:0xdd/255.0 green:0xdd/255.0 blue:0xdd/255.0 alpha:1];
+    self.thumbShadowColor = [UIColor colorWithRed:0xbd/255.0 green:0xbd/255.0 blue:0xbd/255.0 alpha:1];
     
 }
 -(void)setSelIndex:(int)selIndex{
@@ -77,7 +78,7 @@
 
     //// 绘制胶囊体背景色
     NSShadow* shadow = [[NSShadow alloc] init];
-    [shadow setShadowColor: UIColor.darkGrayColor];
+    [shadow setShadowColor: _thumbShadowColor];
     [shadow setShadowOffset: CGSizeMake(1.1, 1.1)];
     [shadow setShadowBlurRadius: _thumbShadowWidth];
     
@@ -122,7 +123,7 @@
     CGContextRestoreGState(context);
     
     [_thumbBorderColor setStroke];
-    thumbPath.lineWidth = 1;
+    thumbPath.lineWidth = 1/[UIScreen mainScreen].scale;
     [thumbPath stroke];
 }
 
